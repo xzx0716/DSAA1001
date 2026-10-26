@@ -23,12 +23,15 @@ OpenAI Codex was used on 25-26 October 2026 as a coding and explanation assistan
   lines. Build execution/HTML-export tools, dependency information and README.
 - Package the saved raw CSV losslessly as gzip, adapt loading to read it directly,
   verify original bytes by SHA-256, and prepare the A1 repository for upload.
+- Simplify the submission to one root-level notebook and its required inputs,
+  clarify that no supplementary observation dataset was used, and update GitHub.
 
 ## Verification and Limits
 
 Verification uses fresh kernels in the installed environment, blocks external
-TCP connections and checks relocation. The verification script and its JSON
-output state its scope; it does not claim a newly provisioned environment.
+TCP connections and checks relocation. It does not claim a newly provisioned
+environment. Verification helpers and duplicate exports are excluded from the
+submission; the notebook contains all code needed for Run All.
 
 Earlier student drafts explored some 2025/2026 labels. Their internal evaluation
 period is therefore not described as wholly untouched. The official hidden test

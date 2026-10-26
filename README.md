@@ -1,7 +1,6 @@
 # DSAA1001 Assessment 1: Chicago Food Inspections
 
-**Main submission:** [base/EDA_food_inspections.ipynb](base/EDA_food_inspections.ipynb).
-**Static preview:** [base/EDA_food_inspections_revised.html](base/EDA_food_inspections_revised.html).
+**Submission notebook:** [Assessment_1_EDA.ipynb](Assessment_1_EDA.ipynb).
 
 Predict whether a food inspection will Fail using information available before
 the inspection begins. This repository contains the Assessment 1 EDA notebook
@@ -11,20 +10,15 @@ and all of its saved inputs. No model has been trained for this submission.
 
 | Path / notebook section | Purpose |
 | --- | --- |
-| `base/EDA_food_inspections.ipynb` | The single submission notebook; executed outputs and Markdown explanations |
+| `Assessment_1_EDA.ipynb` | The single submission notebook at the repository root; executed outputs and Markdown explanations |
 | Notebook Section 3 | Eight figure outputs, comparisons, findings, modelling implications and limitations |
 | Notebook Section 4 | Evidence-based data-quality table covering 14 issues |
 | Notebook Sections 5-6 | Feature availability, establishment overlap, baseline and time-respecting evaluation plan |
 | `data/*.csv.gz` | Complete frozen raw snapshot, losslessly compressed |
 | `data/download_metadata.json` | Original download source, time, date window, rows and columns |
-| `data/snapshot_storage.json` | Compressed and original file checksums and storage details |
 | `data/documentation/` | Official data dictionary and source-verification record |
 | `requirements.txt` | Python dependencies |
 | `AI-USAGE.md` | Tools used, assistance scope and limits |
-| `base/verification.json` | Offline execution and relocation checks; exact scope stated in the file |
-| `base/eda_revision_metrics.json` | Computed counts and supporting analysis statistics |
-| `scripts/verify_assessment1.py` | Optional command-line execution, checks and HTML export |
-| `scripts/revise_eda_notebook.py` | Optional source for rebuilding the notebook; rebuilding clears outputs |
 
 ## Run Offline
 
@@ -35,15 +29,9 @@ dependencies before disconnecting from the network:
 python -m pip install -r requirements.txt
 ```
 
-Open `base/EDA_food_inspections.ipynb` in a Jupyter-compatible editor, select
+Open `Assessment_1_EDA.ipynb` in a Jupyter-compatible editor, select
 the prepared Python environment and choose Restart Kernel / Run All.
-The working directory may be the repository root or `base/`.
-
-Alternatively, run from the repository root:
-
-```sh
-python scripts/verify_assessment1.py
-```
+Use the repository root as the working directory.
 
 The notebook reads the included `.csv.gz` directly with pandas. No manual
 decompression, data download, package installation or Git LFS is needed during
@@ -51,11 +39,10 @@ Run All. The original CSV exceeds GitHub's ordinary-file limit; gzip preserves
 every CSV byte. The notebook verifies the decompressed original SHA-256 before
 analysis. The metadata's `csv_file` refers to that original CSV filename.
 
-The verification command starts fresh kernels, blocks external TCP connections,
-executes from `base/`, then executes in a relocated temporary project root and
-compares metrics and all eight figure outputs. It also regenerates the HTML
-preview and audit JSON. It uses the installed dependency environment rather than
-provisioning a new environment. Its temporary data copies use hard links.
+Offline execution is verified using a fresh kernel with external TCP connections
+blocked, including execution from a relocated project directory. This uses the
+installed dependency environment rather than a newly provisioned environment.
+All analysis code is contained in the notebook; no helper scripts are needed.
 
 ## Data Source and Version
 
@@ -76,6 +63,21 @@ version. The filename's end date is a requested date, not actual coverage.
 Downloading later and filtering inspection dates cannot reproduce which rows
 were published at an earlier time. The saved dictionary and verification record
 contain source URLs, verification time and the dictionary checksum.
+
+## Supplementary Data and Documentation
+
+**No supplementary dataset was used.** All calculations and figures use only the
+saved City of Chicago Food Inspections snapshot. No census, weather, community
+boundaries, external licence records or geocoding data were joined or used as
+additional features. Historical features are derived from earlier rows of the
+same snapshot; the Risk standardisation also uses only that snapshot.
+
+The files in `data/documentation/` are supporting source documentation, not
+additional observation datasets. The official dictionary explains field meanings;
+`source_verification.json` records a later read-only count/date-range check and
+source URLs. Neither adds rows or model features. Both are included because the
+written interpretation cites them. Raw inputs read by the notebook are only the
+compressed snapshot and its download metadata.
 
 Acquisition reused the instructor's column mapping, CSV conversion and metadata
 writer. Temporary download code added gzip transport, 5,000-row pagination,
@@ -132,8 +134,7 @@ identity issue and is not included in `isna()` missing counts.
 
 This is Assessment 1. Model fitting, hidden-test `predictions.csv`, the
 commissioner brief and final presentation belong to Assessment 2. The A1
-modelling plan is in the notebook rather than a separate report. The HTML is
-a convenience preview and does not replace the `.ipynb` submission.
+modelling plan is in the notebook rather than a separate report.
 
 The GitHub upload does not submit anything to the course platform. Complete
 any platform-specific group identification and submit the required notebook
