@@ -1,0 +1,13 @@
+{
+  "verified_at_utc": "2026-10-26T04:11:19+00:00",
+  "notebook": "base/EDA_food_inspections.ipynb",
+  "cells": 30,
+  "executed_code_cells": 13,
+  "figure_outputs": 8,
+  "external_network_blocked": true,
+  "base_directory_run": "passed",
+  "relocated_project_root_run": "passed",
+  "metrics_and_figures_identical": true,
+  "relocation_input_method": "Hard-linked immutable CSV and metadata in a temporary project tree.",
+  "environment_scope": "Fresh kernels in the installed Python environment; not a newly provisioned dependency environment."
+}

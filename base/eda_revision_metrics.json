@@ -1,0 +1,149 @@
+{
+  "raw_rows": 198576,
+  "labelled_rows": 168128,
+  "missing_licences": 7,
+  "zero_licences": 464,
+  "other_invalid_licences": 0,
+  "zero_names": 170,
+  "zero_addresses": 205,
+  "max_valid_licence_visits": 57,
+  "same_day_groups_valid": 1375,
+  "same_day_rows_valid": 2759,
+  "training_labelled_rows": 140762,
+  "training_fail_rate": 0.2286767735610463,
+  "history_comparison_omitted_unknown": 325,
+  "risk_standardisation": [
+    {
+      "risk": "Risk 1 (High)",
+      "n": 99127,
+      "crude_rate_in_same_subset": 0.24008595034652516,
+      "common_mix_rate": 0.24370769920382448,
+      "percentage_point_change": 0.3621748857299323
+    },
+    {
+      "risk": "Risk 2 (Medium)",
+      "n": 18797,
+      "crude_rate_in_same_subset": 0.2463691014523594,
+      "common_mix_rate": 0.2305696763942613,
+      "percentage_point_change": -1.5799425058098115
+    },
+    {
+      "risk": "Risk 3 (Low)",
+      "n": 5777,
+      "crude_rate_in_same_subset": 0.30084819110264843,
+      "common_mix_rate": 0.277330403868669,
+      "percentage_point_change": -2.351778723397946
+    }
+  ],
+  "history_by_prior": [
+    {
+      "prior_group": "0 observed",
+      "n": 23252,
+      "fail_count": 6869,
+      "fail_rate": 0.2954154481334939
+    },
+    {
+      "prior_group": "1",
+      "n": 20406,
+      "fail_count": 3898,
+      "fail_rate": 0.19102224835832599
+    },
+    {
+      "prior_group": "2",
+      "n": 15842,
+      "fail_count": 3247,
+      "fail_rate": 0.20496149476076253
+    },
+    {
+      "prior_group": "3-5",
+      "n": 34649,
+      "fail_count": 7296,
+      "fail_rate": 0.21056884758578892
+    },
+    {
+      "prior_group": "6-10",
+      "n": 32553,
+      "fail_count": 7415,
+      "fail_rate": 0.22778238564802014
+    },
+    {
+      "prior_group": "11-20",
+      "n": 12955,
+      "fail_count": 3150,
+      "fail_rate": 0.2431493631802393
+    },
+    {
+      "prior_group": "21+",
+      "n": 780,
+      "fail_count": 215,
+      "fail_rate": 0.27564102564102566
+    }
+  ],
+  "history_by_gap": [
+    {
+      "gap_group": "No prior observed",
+      "n": 23252,
+      "fail_count": 6869,
+      "fail_rate": 0.2954154481334939
+    },
+    {
+      "gap_group": "1-90 days",
+      "n": 46545,
+      "fail_count": 6404,
+      "fail_rate": 0.13758728112579224
+    },
+    {
+      "gap_group": "91-180",
+      "n": 9081,
+      "fail_count": 2574,
+      "fail_rate": 0.28344895936570863
+    },
+    {
+      "gap_group": "181-365",
+      "n": 31820,
+      "fail_count": 8323,
+      "fail_rate": 0.26156505342551856
+    },
+    {
+      "gap_group": "366-730",
+      "n": 25618,
+      "fail_count": 6646,
+      "fail_rate": 0.25942696541494265
+    },
+    {
+      "gap_group": ">730",
+      "n": 4121,
+      "fail_count": 1274,
+      "fail_rate": 0.30914826498422715
+    }
+  ],
+  "split_summary": [
+    {
+      "split": "train",
+      "actual_dates": "2016-01-04 to 2024-12-31",
+      "labelled_rows": 140762,
+      "unknown_identity_rows": 325,
+      "seen_in_labelled_train_percent_of_all_rows": 99.769113823333,
+      "known_in_any_training_history_percent_of_all_rows": 99.769113823333,
+      "unseen_in_training_history_rows": 0
+    },
+    {
+      "split": "validation",
+      "actual_dates": "2025-01-02 to 2025-12-31",
+      "labelled_rows": 16060,
+      "unknown_identity_rows": 39,
+      "seen_in_labelled_train_percent_of_all_rows": 84.79452054794521,
+      "known_in_any_training_history_percent_of_all_rows": 85.18057285180572,
+      "unseen_in_training_history_rows": 2341
+    },
+    {
+      "split": "internal evaluation",
+      "actual_dates": "2026-01-02 to 2026-09-30",
+      "labelled_rows": 10641,
+      "unknown_identity_rows": 38,
+      "seen_in_labelled_train_percent_of_all_rows": 76.95705290856122,
+      "known_in_any_training_history_percent_of_all_rows": 77.29536697678789,
+      "unseen_in_training_history_rows": 2378
+    }
+  ]
+}

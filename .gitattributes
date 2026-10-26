@@ -1,0 +1,4 @@
+* text=auto
+*.gz binary
+*.pdf binary
+*.ipynb text eol=lf

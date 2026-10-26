@@ -1,0 +1,24 @@
+{
+  "checked_at_utc": "2026-10-25T08:51:43+00:00",
+  "official_dataset_page": "https://data.cityofchicago.org/Health-Human-Services/Food-Inspections/4ijn-s7e5/about_data",
+  "official_metadata_url": "https://data.cityofchicago.org/api/views/4ijn-s7e5.json",
+  "dictionary_url": "https://data.cityofchicago.org/api/assets/BAD5301B-681A-4202-9D25-51B2CAE672FF",
+  "dictionary_sha256": "3bd7302c9e30bf1409d8c8abc6437301408231088cdf50cccd191c90cb0a9717",
+  "dictionary_notes": [
+    "Licence is described as a unique licensing number. Zero is not assigned an explicit meaning in this document.",
+    "Risk categories relate to adverse public-health risk and inspection frequency.",
+    "The dictionary includes historical violation definitions; the portal separately flags a 2018-07-01 procedure change."
+  ],
+  "aggregate_query": {
+    "$select": "count(*) as n, min(inspection_date) as first_date, max(inspection_date) as last_date",
+    "$where": "inspection_date >= '2016-01-01T00:00:00' AND inspection_date <= '2026-10-25T23:59:59'"
+  },
+  "aggregate_response": [
+    {
+      "n": "198576",
+      "first_date": "2016-01-04T00:00:00.000",
+      "last_date": "2026-10-23T00:00:00.000"
+    }
+  ],
+  "snapshot_policy": "Keep the already pinned snapshot. Matching aggregate counts do not prove all row contents are unchanged."
+}
